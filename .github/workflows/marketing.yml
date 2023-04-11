@@ -18,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
+      - run: |
+          echo "PRODUCTION_DOMAIN : ${{ vars.PRODUCTION_DOMAIN }}"
       - run: npm run build
         env: 
           PRODUCTION_DOMAIN: ${{ vars.PRODUCTION_DOMAIN }}
